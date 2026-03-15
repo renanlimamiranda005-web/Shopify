@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/">{{ shop.name }}</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="/collections/all">Produtos</a></li>
+        <li><a href="/pages/contato">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+    <button class="cart-toggle" aria-label="Carrinho">
+      🛒 (<span class="cart-count">{{ cart.item_count }}</span>)
+    </button>
+  </div>
+</header>
