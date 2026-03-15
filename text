@@ -1,0 +1,28 @@
+meu-tema/
+├── assets/
+│   ├── theme.css
+│   └── theme.js
+├── config/
+│   └── settings_schema.json
+├── layout/
+│   └── theme.liquid
+├── sections/
+│   ├── header.liquid
+│   ├── footer.liquid
+│   ├── slideshow.liquid
+│   ├── featured-collection.liquid
+│   ├── newsletter.liquid
+│   └── product-grid.liquid
+├── snippets/
+│   ├── icon.liquid
+│   ├── product-card.liquid
+│   └── cart-drawer.liquid
+├── templates/
+│   ├── index.json
+│   ├── product.json
+│   ├── collection.json
+│   ├── cart.json
+│   ├── page.json
+│   ├── search.json
+│   └── 404.json
+└── (opcional) .gitignore
