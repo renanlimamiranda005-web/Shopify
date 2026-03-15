@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Resultados da busca</h1>
+  <form action="/search" method="get">
+    <input type="text" name="q" value="{{ search.terms | escape }}" placeholder="Buscar produtos...">
+    <button type="submit" class="btn">Buscar</button>
+  </form>
+  {% if search.performed %}
+    {% if search.results_count > 0 %}
+      <p>{{ search.results_count }} resultados encontrados.</p>
+      <div class="product-grid">
+        {% for item in search.results %}
+          {% if item.object_type == 'product' %}
+            {% render 'product-card', product: item %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Nenhum resultado encontrado.</p>
+    {% endif %}
+  {% endif %}
+</div>
