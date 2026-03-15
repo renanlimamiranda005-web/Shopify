@@ -1,0 +1,151 @@
+/* Variáveis de cor */
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-blue: #007bff;
+  --color-gray-light: #f5f5f5;
+  --color-gray-dark: #333333;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-body);
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+.site-header {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--color-blue);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: var(--color-white);
+}
+
+.main-nav a:hover {
+  color: var(--color-blue);
+}
+
+.cart-toggle {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Botão azul */
+.btn {
+  display: inline-block;
+  background: var(--color-blue);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-top: 2px solid var(--color-blue);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-column h3 {
+  margin-bottom: 1rem;
+  color: var(--color-blue);
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column a {
+  color: var(--color-white);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .header-inner {
+    flex-wrap: wrap;
+  }
+  .mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+  }
+}
+/* ... mais estilos serão adicionados conforme necessário */
