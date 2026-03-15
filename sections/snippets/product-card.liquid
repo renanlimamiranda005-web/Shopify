@@ -1,0 +1,10 @@
+<div class="product-card">
+  <a href="{{ product.url }}">
+    <div class="product-image">
+      <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+    </div>
+    <h3>{{ product.title }}</h3>
+    <p>{{ product.price | money }}</p>
+  </a>
+  <button class="btn add-to-cart" data-variant-id="{{ product.variants.first.id }}">Adicionar ao carrinho</button>
+</div>
