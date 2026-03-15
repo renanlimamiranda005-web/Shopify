@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>{{ collection.title }}</h1>
+  <p>{{ collection.description }}</p>
+
+  <div class="collection-filters">
+    <!-- filtros simples por tipo de produto (exemplo) -->
+    <label for="sort-by">Ordenar por:</label>
+    <select id="sort-by">
+      <option value="manual">Destaque</option>
+      <option value="price-ascending">Menor preço</option>
+      <option value="price-descending">Maior preço</option>
+      <option value="title-ascending">A-Z</option>
+      <option value="title-descending">Z-A</option>
+    </select>
+  </div>
+
+  <div class="product-grid">
+    {% for product in collection.products %}
+      {% render 'product-card', product: product %}
+    {% else %}
+      <p>Nenhum produto encontrado.</p>
+    {% endfor %}
+  </div>
+</div>
