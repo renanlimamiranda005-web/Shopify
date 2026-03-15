@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "settings": {
+        "slides": [
+          {
+            "image": "https://via.placeholder.com/1200x400?text=Banner+1",
+            "link": "/collections/all",
+            "text": "Promoção imperdível"
+          },
+          {
+            "image": "https://via.placeholder.com/1200x400?text=Banner+2",
+            "link": "/collections/all",
+            "text": "Frete grátis"
+          }
+        ]
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Produtos em destaque",
+        "collection": "all"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "title": "Assine nossa newsletter",
+        "text": "Receba ofertas exclusivas"
+      }
+    }
+  },
+  "order": ["slideshow", "featured_collection", "newsletter"]
+}
