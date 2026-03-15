@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "collection": {
+      "type": "collection-template",
+      "settings": {
+        "show_filter": true,
+        "products_per_page": 12
+      }
+    }
+  },
+  "order": ["collection"]
+}
