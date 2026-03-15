@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Carrinho</h1>
+  {% if cart.item_count > 0 %}
+    <form action="/cart" method="post" novalidate>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in cart.items %}
+            <tr>
+              <td>
+                <a href="{{ item.url }}">
+                  <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title }}">
+                  {{ item.title }}
+                </a>
+              </td>
+              <td>{{ item.price | money }}</td>
+              <td>
+                <input type="number" name="updates[]" value="{{ item.quantity }}" min="0">
+              </td>
+              <td>{{ item.line_price | money }}</td>
+              <td>
+                <a href="/cart/change?line={{ forloop.index }}&quantity=0">Remover</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div>
+        <p>Subtotal: {{ cart.total_price | money }}</p>
+        <button type="submit" name="update">Atualizar</button>
+        <button type="submit" name="checkout" class="btn">Finalizar compra</button>
+      </div>
+    </form>
+  {% else %}
+    <p>Seu carrinho está vazio.</p>
+    <a href="/collections/all" class="btn">Continuar comprando</a>
+  {% endif %}
+</div>
