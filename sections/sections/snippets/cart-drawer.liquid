@@ -1,0 +1,28 @@
+<div class="cart-overlay"></div>
+<div class="cart-drawer">
+  <div class="cart-drawer-header">
+    <h2>Seu carrinho</h2>
+    <button class="cart-drawer-close">&times;</button>
+  </div>
+  <div class="cart-drawer-items">
+    {% if cart.item_count > 0 %}
+      {% for item in cart.items %}
+        <div class="cart-item">
+          <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title }}">
+          <div>
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.price | money }}</p>
+            <p>Quantidade: {{ item.quantity }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>Seu carrinho está vazio.</p>
+    {% endif %}
+  </div>
+  <div class="cart-drawer-footer">
+    <p>Total: {{ cart.total_price | money }}</p>
+    <a href="/cart" class="btn">Ver carrinho</a>
+    <a href="/checkout" class="btn">Finalizar compra</a>
+  </div>
+</div>
