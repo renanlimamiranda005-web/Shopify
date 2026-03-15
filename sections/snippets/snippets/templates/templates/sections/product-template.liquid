@@ -1,0 +1,27 @@
+<div class="container product-page">
+  <div class="product-grid">
+    <div class="product-images">
+      <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}" id="main-image">
+      <div class="thumbnails">
+        {% for image in product.images %}
+          <img src="{{ image | img_url: 'small' }}" alt="{{ image.alt }}" onclick="document.getElementById('main-image').src=this.src.replace('small','large')">
+        {% endfor %}
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>{{ product.title }}</h1>
+      <p class="price">{{ product.price | money }}</p>
+      <p>{{ product.description }}</p>
+      {% form 'product', product %}
+        <select name="id" id="variant-select">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %}>
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
+        <button type="submit" name="add" class="btn">Adicionar ao carrinho</button>
+      {% endform %}
+    </div>
+  </div>
+</div>
